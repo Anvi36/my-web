@@ -1,1 +1,202 @@
-<h1>Hello World</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5-Minute Expert Challenge</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-brand">Expert Challenge</a>
+            <div class="nav-tabs">
+                <a href="#home" class="nav-tab active" data-page="home">Home</a>
+                <a href="#topics" class="nav-tab" data-page="topics">Topics</a>
+                <a href="#leaderboard" class="nav-tab" data-page="leaderboard">Leaderboard</a>
+                <a href="#about" class="nav-tab" data-page="about">About</a>
+            </div>
+            <div class="nav-actions">
+                <button class="history-toggle" title="Toggle Score History">
+                    <i class="fas fa-history"></i>
+                </button>
+                <button class="theme-toggle" title="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <section id="home" class="page active">
+    <header>
+        <div class="container">
+            <h1>5-Minute Expert Challenge</h1>
+            <p>Learn a new topic in 5 minutes and test your knowledge!</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="score-history">
+            <div class="score-history-content hidden">
+                <h3>Score History</h3>
+                <div id="scoreList"></div>
+            </div>
+        </div>
+
+        <div class="challenge-container">
+            <div class="timer">5:00</div>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <div class="topic-display">
+                <h2>Your Topic</h2>
+                <p>Select a topic or click Start for a random topic!</p>
+            </div>
+            <button class="start-btn">Start Challenge</button>
+            <button class="change-topic-btn">Change Topic</button>
+            <button class="skip-btn">Skip Timer & Start Quiz</button>
+        </div>
+
+        <div class="quiz-container">
+            <div class="question-progress">
+                <!-- Question dots will be dynamically added here -->
+            </div>
+            <div class="quiz-question">
+                <h3>Question 1</h3>
+                <div class="options">
+                    <div class="option">Option 1</div>
+                    <div class="option">Option 2</div>
+                    <div class="option">Option 3</div>
+                    <div class="option">Option 4</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="difficulty-selector">
+            <button class="difficulty-btn active" data-difficulty="all">All Topics</button>
+            <button class="difficulty-btn" data-difficulty="easy">Easy</button>
+            <button class="difficulty-btn" data-difficulty="medium">Medium</button>
+            <button class="difficulty-btn" data-difficulty="hard">Hard</button>
+        </div>
+
+        <div class="topic-selector">
+            <!-- Topics will be dynamically added here -->
+        </div>
+
+        <div class="result-container">
+            <h2>Challenge Complete!</h2>
+            <div class="score">0%</div>
+            <div class="expert-level">Beginner</div>
+            <button class="restart-btn">Try Another Topic</button>
+        </div>
+    </div>
+    </section>
+
+    <!-- Topics Page -->
+    <section id="topics" class="page">
+        <div class="container">
+            <h1 class="page-title">Explore Topics</h1>
+            <div class="topics-grid">
+                <!-- Topics will be dynamically added here -->
+            </div>
+            <div class="topic-details">
+                <div class="topic-info">
+                    <h2>Topic Information</h2>
+                    <p>Select a topic to view details and learning resources.</p>
+                </div>
+                <div class="learning-resources">
+                    <h3>Learning Resources</h3>
+                    <div class="resource-list">
+                        <!-- Resources will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Page -->
+    <section id="leaderboard" class="page">
+        <div class="container">
+            <h1 class="page-title">Leaderboard</h1>
+            <div class="leaderboard-filters">
+                <button class="filter-btn active" data-filter="all">All Time</button>
+                <button class="filter-btn" data-filter="week">This Week</button>
+                <button class="filter-btn" data-filter="month">This Month</button>
+            </div>
+            <div class="leaderboard-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Player</th>
+                            <th>Topic</th>
+                            <th>Score</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardBody">
+                        <!-- Leaderboard entries will be dynamically added here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Page -->
+    <section id="about" class="page">
+        <div class="container">
+            <h1 class="page-title">About Expert Challenge</h1>
+            <div class="about-content">
+                <div class="about-section">
+                    <h2>Our Mission</h2>
+                    <p>Expert Challenge is designed to make learning fun and engaging. We believe that anyone can become an expert in any topic with just 5 minutes of focused learning and practice.</p>
+                </div>
+                <div class="about-section">
+                    <h2>How It Works</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <i class="fas fa-book"></i>
+                            <h3>Choose a Topic</h3>
+                            <p>Select from a wide range of topics or let us surprise you with a random one.</p>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-clock"></i>
+                            <h3>5-Minute Learning</h3>
+                            <p>Take 5 minutes to learn about your chosen topic using our curated resources.</p>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-question-circle"></i>
+                            <h3>Take the Quiz</h3>
+                            <p>Test your knowledge with our carefully crafted questions.</p>
+                        </div>
+                        <div class="step">
+                            <i class="fas fa-trophy"></i>
+                            <h3>Track Progress</h3>
+                            <p>Monitor your improvement and compete with others on the leaderboard.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-section">
+                    <h2>Contact Us</h2>
+                    <div class="contact-info">
+                        <p><i class="fas fa-envelope"></i> support@expertchallenge.com</p>
+                        <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-facebook"></i></a>
+                            <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="feedback-message"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
